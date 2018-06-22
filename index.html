@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>珠海金谷棒科技有限公司</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<link rel="stylesheet" href="css/onepage-scroll.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="iconfont/iconfont.css">
+<link rel="stylesheet" href="css/avator.css">
+<link rel="stylesheet" href="css/animate.css">
+</head>
+
+<body class="loading">
+	<!-- 操作，发布，使用 -->
+	<div class="options">
+		<div id = "useTemplate" class="btn" onclick="useTemplate();">使用</div>
+		<div id = "pubTemplate" class="btn" onclick="pubTemplate();">发布</div>
+	</div>
+
+	<!-- 背景音乐 -->
+	<div id="audio_btn" class="off video_exist" ontouchstart="gtouchstart('audio_btn')" ontouchmove="gtouchmove('audio_btn')" ontouchend="gtouchend()">
+      <div id="yinfu"></div>
+      <audio src="audio/lian.mp3" id="media" preload loop></audio>
+  </div>
+
+	<!-- 文文本上传 -->
+	<div class="text-box">
+		<!-- <input id="input-upload-text" type="textarea" name="input-upload-text" placeholder="请输入替换后的文字"> -->
+		<textarea id="input-upload-text" placeholder="请输入替换后的文字" contenteditable="true"></textarea>
+		<div class="btns" onselectstart="return false;">
+			<button class="btn-cancel" onclick="cancelText()">取消</button>
+			<button class="btn-confirm" onclick="confirmText()">确认</button>
+		</div>
+	</div>
+
+	<!-- 图片上传 -->
+	<div id="aisle" class="aisle">
+		<div class='mask' onclick="document.getElementById('aisle').style.display='none'"></div>
+		<div class="btn-able">
+			<button onclick="upload()" class="local-photo">
+				本地相册
+			</button>
+			<button onclick="init_camera()" class="take-photo">拍照</button>
+		</div>
+		<div class="btn-disable">
+			<button onclick="document.getElementById('aisle').style.display='none'" class="close">取消</button>
+		</div>
+	</div>
+
+	<!-- 上传音频 -->
+	<div id="audio" class="aisle">
+		<div class='mask' onclick="document.getElementById('audio').style.display='none'"></div>
+		<div class="btn-able">
+			<button onclick="uploadAudio();" class="local-photo">
+				本地音频
+			</button>
+		</div>
+		<div class="btn-disable">
+			<button onclick="document.getElementById('audio').style.display='none'" class="close">取消</button>
+		</div>
+	</div>
+	<!-- 加载框 表示上传中 -->
+	<div id="gcjDhccFullScreen">
+		<div class="uploading-img"></div>
+		<span>正在上传中,请稍候...</span>
+	</div>
+
+	<!-- 主页和全屏分页内容 -->
+	<div class="main" id="main">
+		<!-- page1 -->
+		<div class="page page1">
+			<div class="content">
+				<!-- <h1>We are</h1>
+				<h1 id="company-name" ontouchstart="gtouchstart('company-name')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">金谷棒科技</h1> -->
+				<div class="top">
+					<!-- <img src="images/triangle/triangle-1.png">
+					<img src="images/triangle/triangle-2.png">
+					<img src="images/triangle/triangle-3.png">
+					<img src="images/triangle/triangle-4.png">
+					<img src="images/triangle/triangle-5.png"> -->
+				</div>
+				<div class="center">
+					<div class="logo-bg">
+						<img class="logo-image" id="page1-logo-image" ontouchstart="gtouchstart('page1-logo-image')" ontouchmove="gtouchmove()" ontouchend="gtouchend()" src="images/kingubo-logo.png">
+					</div>
+					<p id="slogan" ontouchstart="gtouchstart('slogan')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">基于移动互联网、大数据和云计算技术致力于研发教育领域的互联网应用和信息服务运营商。</p>
+				</div>
+				<div class="bottom">
+					<img src="images/triangle/triangle-5.png">
+					<img src="images/triangle/triangle-2.png">
+				</div>
+			</div>
+		</div>
+
+		<!-- page2 -->
+		<div class="page page2">
+			<div class="content">
+				<div class="top">
+
+				</div>
+				<div class="center">
+					<div class="logo-bg">
+						<img class="logo-image" id="page2-logo-image" src="images/kingubo-logo.png" ontouchstart="gtouchstart('page2-logo-image')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">
+					</div>
+					<h1 id="page2-title" ontouchstart="gtouchstart('page2-title')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">关于我们</h1>
+					<p id="page2-p" ontouchstart="gtouchstart('page2-p')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">基于移动互联网、大数据和云计算技术致力于研发教育领域的互联。珠海金谷棒科技有限公司，是一家基于移动互联网、大数据和云计算技术致力于研发教育领域的互联网应用和信息服务运营商。面向高等院校、职业院校、企业、社会培训机构及个人提供管理与人才培养与服务。依托于使用广泛的app形式以及云平台的支持和服务，公司旗下核心产品实习季，将移动互联、社交网络和云技术智慧融合，彻底颠覆和重构PC时代的传统顶岗实习管理系统，解决其复杂难用、推行困难的弊病，打造最新一代移动顶岗实习服务平台。
+					</p>
+				</div>
+				<div class="bottom">
+
+				</div>
+			</div>
+		</div>
+
+		<!-- page3 -->
+		<div class="page page3">
+			<div class="content">
+				<div class="page3-circle-box">
+
+				</div>
+				<div class="center">
+					<img class="" id="page3-image" ontouchstart="gtouchstart('page3-image')" ontouchmove="gtouchmove()" ontouchend="gtouchend()" src="images/kingubo-logo.png">
+
+					<h1 id="page3-title" ontouchstart="gtouchstart('page3-title')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">我们的优势</h1>
+
+					<!-- <img id="page3-img1" src="images/page3-img1.png">
+					<img id="page3-img2" src="images/page3-img2.png"> -->
+					<p id="page3-p" ontouchstart="gtouchstart('page3-p')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">公司以“用心服务，共创价值”为核心理念，致力为客户提供最优秀企业信息化和电子商务解决方案及相关咨询、培训和实施服务。公司视服务为企业生命，视客户为企业之本，以“成功地帮助了顾客=成功地发展了自己！”为企业服务宗旨，努力提升服务水平，我们的项目规划师总是勤于了解客户，并站在客户的立场去制订专业和合理的实施方案，以优秀服务为客户节约成本、创造价值，赢得了广大客户的信赖与支持。</p>
+				</div>
+				<div class="bottom">
+					<img src="images/triangle/triangle-14.png">
+					<img src="images/triangle/triangle-16.png">
+					<img src="images/triangle/triangle-15.png">
+				</div>
+
+			</div>
+		</div>
+
+		<!-- page4 -->
+		<div class="page page4">
+			<div class="content">
+				<div class="page4-circle-box">
+
+				</div>
+
+				<div class="center">
+					<!-- <h1 id="page4-title" ontouchstart="gtouchstart('page4-title')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">联系我们</h1> -->
+					<ul>
+						<li>
+							<img src="images/page4-phone (2).png">
+							<div>
+								<label>联系电话</label>
+								<p id="page4-phone" ontouchstart="gtouchstart('page4-phone')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">(0756)-3632156</p>
+							</div>
+						</li>
+						<li>
+							<img src="images/page4-email (2).png">
+							<div>
+								<label>电子邮箱</label>
+								<p id="page4-email" ontouchstart="gtouchstart('page4-email')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">hr@kingubo.cn</p>
+							</div>
+						</li>
+						<li>
+							<img src="images/page4-address (2).png">
+							<div>
+								<label>公司地址</label>
+								<p id="page4-address" ontouchstart="gtouchstart('page4-address')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">珠海市红山路阳光大厦212</p>
+							</div>
+						</li>
+					</ul>
+					<div class="qrcode-box">
+						<p>扫描下方二维码关注我们</p>
+						<img id="qrcode-image" src="images/qrcode-2.png" ontouchstart="gtouchstart('qrcode-image')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">
+					</div>
+				</div>
+
+				<div class="bottom">
+					<img src="images/triangle/triangle-7.png">
+					<img src="images/triangle/triangle-1.png">
+					<img src="images/triangle/triangle-5.png">
+				</div>
+			</div>
+		</div>
+
+		<!-- page5 -->
+		<!-- <div class="page page5">
+			<div class="content">
+				<h1 id="page5-title" ontouchstart="gtouchstart('page5-title')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">关注我们</h1>
+				<img id="qrcode-image" class="qrcode-img" src="images/qrcode.jpg" ontouchstart="gtouchstart('qrcode-image')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">
+				<span id="page5-p" ontouchstart="gtouchstart('page5-p')" ontouchmove="gtouchmove()" ontouchend="gtouchend()">扫一扫上方二维码立即关注我们</span>
+			</div>
+		</div> -->
+
+	</div>
+
+<script src="js/jquery.min.js"></script>
+<!-- <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
+<script src="js/jquery.onepage-scroll.min.js"></script>
+<script src="js/jquery.resizeend.min.js"></script>
+<script src="js/modernizr.custom.07427.js"></script>
+<script src="js/template.js"></script>
+<script>
+$(function(){
+	var $window = $(window);
+	var $wh = $window.height();
+	var $body = $('body');
+	var $main = $('.main');
+	var $responsiveImg = $('.responsiveImg');
+	var $responsiveFallback = false;
+
+	//页面加载时判断是否需要更换图片
+	// if($wh < 790){
+	// 	responsiveFn1();
+	// }
+
+	//浏览器检测，判断是否为高级浏览器
+	if(Modernizr.cssanimations){
+		$responsiveFallback = false;
+	} else {
+		$responsiveFallback = true;
+	}
+
+	//onepage_scroll方法
+	$main.onepage_scroll({
+		sectionContainer: '.page',
+		responsiveFallback: $responsiveFallback
+	});
+
+	//窗口改变大小切换不同的图片
+	// $window.resizeEnd({
+	// 	delay : 500
+	// }, function(){
+	// 	var $wh = $window.height();
+	// 	if($wh < 790){
+	// 		responsiveFn1();
+	// 	} else {
+	// 		responsiveFn2();
+	// 	}
+	// });
+
+	// function responsiveFn1(){
+	// 	$body.addClass('responsive-height-lt790')
+	// 	$responsiveImg.each(function(){
+	// 		var $dateSmall = $(this).attr('date-small');
+	// 		$(this).attr('src', $dateSmall);
+	// 	});
+	// }
+
+	// function responsiveFn2(){
+	// 	$body.removeClass('responsive-height-lt790')
+	// 	$responsiveImg.each(function(){
+	// 		var $dateBig = $(this).attr('date-big');
+	// 		$(this).attr('src', $dateBig);
+	// 	});
+	// }
+
+	$('a').click(function(){
+		return false;
+	});
+});
+
+//页面加载时的 Loading 效果
+$(window).load(function(){
+	window.setTimeout(function(){
+		$('body').removeClass('loading');
+	}, 200);
+});
+</script>
+
+</div>
+</body>
+</html>

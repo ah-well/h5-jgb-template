@@ -1,0 +1,102 @@
+@charset "utf-8";
+/*Create by peng on 12.24.2017*/
+/* CSS Document */
+
+/* nav */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #000;
+    font-size: 0.7rem;
+    position: fixed;
+    color: #fff;
+    width: 100%;
+}
+.nav .edit {
+    font-size: 1.5rem;
+    line-height: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 20px;
+    position: relative;
+    top: -10px;
+}
+/* nav */
+/* dashboard */
+.dashboard{
+    background-color: #000;
+    color: #fff;
+    padding: 40px 10px 20px 10px;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    font-weight: 100;
+    color: #FFC9C9;
+    justify-content: center;
+    align-items: center;
+}
+.dashboard .avator{
+    width: 80vw;
+    height: 80vw;
+}
+
+/* dashboard */
+/* aisle */
+.aisle {
+    position: fixed;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    z-index: 10;
+}
+.aisle .mask{
+    height: calc(100% - 12rem);
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.7);
+}
+#audio .mask{
+    height: calc(100% - 8rem);
+}
+
+/*.aisle .btn-able .local-photo {
+    margin-bottom: 10px;
+}*/
+.aisle .btn-able {
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+        justify-content: space-around;
+    align-items: center;
+    border-bottom: 0.2rem solid #f5f5f5;
+    background-color: #fff;
+}
+#audio .btn-able{
+    height: 4rem;
+}
+.aisle .btn-disable {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.aisle .btn-disable button{
+    background-color: #ccc;
+}
+
+.aisle button{
+    height: 6.4vh;
+    width: 94%;
+    background: #C83C3B;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+/* aisle */
